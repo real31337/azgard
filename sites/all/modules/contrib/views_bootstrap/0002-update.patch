@@ -1,0 +1,38 @@
+From eb4b9c9e17f1714fa16dd7db37ab1e34483f9b4d Mon Sep 17 00:00:00 2001
+From: Ura Venger <real4mag@gmail.com>
+Date: Fri, 29 Mar 2013 00:53:29 +0600
+Subject: [PATCH 2/2] update
+
+---
+ .../views-bootstrap-carousel-plugin-rows.tpl.php     |   18 ++++++++++--------
+ 1 file changed, 10 insertions(+), 8 deletions(-)
+
+diff --git a/templates/carousel/views-bootstrap-carousel-plugin-rows.tpl.php b/templates/carousel/views-bootstrap-carousel-plugin-rows.tpl.php
+index 67170bd..dcba5f5 100644
+--- a/templates/carousel/views-bootstrap-carousel-plugin-rows.tpl.php
++++ b/templates/carousel/views-bootstrap-carousel-plugin-rows.tpl.php
+@@ -1,11 +1,13 @@
+ <?php print $image ?>
+ 
+-<div class="carousel-caption">
+-  <?php if (isset($title)): ?>
+-    <h4><?php print $title ?></h4>
+-  <?php endif ?>
++<?php if ($title || $description): ?>
++  <div class="carousel-caption">
++    <?php if (isset($title)): ?>
++      <h4><?php print $title ?></h4>
++    <?php endif ?>
+ 
+-  <?php if (isset($description)): ?>
+-    <p><?php print $description ?></p>
+-  <?php endif ?>
+-</div>
++    <?php if (isset($description)): ?>
++      <p><?php print $description ?></p>
++    <?php endif ?>
++  </div>
++<?php endif ?>
+-- 
+1.7.10.4
+

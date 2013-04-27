@@ -1,0 +1,20 @@
+name = Views Stapel
+core = 7.x
+package = Views
+description = An experimental jQuery plugin that will group thumbnails by a shared data-attribute into a pile.
+
+; views => 7.x-3.0-rc3
+dependencies[] = views
+dependencies[] = libraries
+dependencies[] = jquery_update
+dependencies[] = modernizr
+
+files[] = plugins/views_stapel_plugin_style.inc
+files[] = plugins/views_stapel_plugin_rows.inc
+
+; Information added by drupal.org packaging script on 2012-12-08
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "views_stapel"
+datestamp = "1354974245"
+

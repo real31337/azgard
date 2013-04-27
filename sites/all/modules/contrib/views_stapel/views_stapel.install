@@ -1,0 +1,43 @@
+<?php
+/**
+ * @file
+ * Install, update, and uninstall functions for the views_stapel module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function views_stapel_requirements($phase) {
+  $t = get_t();
+  $requirements = array();
+
+  switch ($phase) {
+    case 'install':
+      //--
+      break;
+
+    case 'runtime':
+      // Check stapel library.
+      $directory = libraries_get_path('stapel');
+      $stapel_path = $directory . '/js/jquery.stapel.js';
+
+      $requirements['views_stapel'] = array(
+        'title' => $t('Views Stapel: Stapel'),
+        'value' => $t('!stapel Library (%directory)', array(
+          '%directory' => $directory,
+          '!stapel' => l($t('Stapel'), 'https://github.com/codrops/Stapel'),
+        )),
+        'severity' => is_file($stapel_path) ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+      );
+
+      // Check jQuery version.
+      $jquery = drupal_get_library('system', 'jquery');
+      $requirements['views_stapel_jquery'] = array(
+        'title' => $t('Views Stapel: jQuery'),
+        'value' => $t('jQuery version 1.8+'),
+        'severity' => (float)$jquery['version'] < 1.8 ? REQUIREMENT_ERROR : REQUIREMENT_OK,
+      );
+  }
+
+  return $requirements;
+}
