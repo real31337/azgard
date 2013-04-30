@@ -1,0 +1,8 @@
+name = Azgard
+description = ''
+
+base theme = bootstrap
+core = 7.x
+version = "7.x"
+
+stylesheets[all][] = css/azgard.css.less
