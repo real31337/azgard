@@ -1,10 +1,21 @@
-<div class="region region-page-top">
-  <div class="header-wrapper">
-    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-    </a>
-  </div>      
-</div>
+
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+
+
+      <?php if (!empty($logo)): ?>
+        <a class="logo pull-center" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+          <img src="<?php print $logo; ?>" width=100% height=170 alt="<?php print t('Home'); ?>" />
+        </a>
+      <?php endif; ?>
+
+      <?php if (!empty($site_name)): ?>
+        <h1 id="site-name">
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="brand"><?php print $site_name; ?></a>
+        </h1>
+      <?php endif; ?>
+
+
+
 
 <div class="main-container container">
 
